@@ -25,7 +25,6 @@ import { format } from 'date-fns';
 export default {
   name: 'NewsList',
   beforeRouteUpdate(to, from, next) {
-    console.log('beforeRouteUpdate');
     const page = to.query.page || 1;
     this.getList(page);
     window.scroll(0,0);
