@@ -156,7 +156,7 @@ export default {
   li {
     padding: 0;
     margin: 0;
-  border-bottom: 1px solid gray;
+    border-bottom: 1px solid gray;
 
     a {
       display: flex;

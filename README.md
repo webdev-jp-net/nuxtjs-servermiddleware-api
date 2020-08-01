@@ -1,4 +1,16 @@
-# test-app
+# Nuxt JS serverMiddleware mockup API
+
+1.0.0
+
+- News articles of dummy
+
+## added/changed
+
+- `/api/news.js` ... mockup API
+- `/pages/news/index.js`
+- `/pages/news/_id.js`
+- `/store/news.js`
+- `nuxt.config.js`
 
 ## Build Setup
 
