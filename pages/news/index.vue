@@ -27,8 +27,7 @@ export default {
   beforeRouteUpdate(to, from, next) {
     console.log('beforeRouteUpdate');
     const page = to.query.page || 1;
-    const period = to.query.period || '';
-    this.getList(page, period);
+    this.getList(page);
     window.scroll(0,0);
     next();
   },
@@ -38,9 +37,6 @@ export default {
     },
     page() {
       return this.$store.getters['news/page'];
-    },
-    period() {
-      return this.$store.getters['news/period'];
     },
     pageStatus() {
       return this.$store.getters['news/pageStatus'];
@@ -52,31 +48,27 @@ export default {
   created() {
     if(!this.resultList.length) {
       const page = this.$route.query.page || 1;
-      const period = this.$route.query.period || '';
-      this.getList(page, period);
+      this.getList(page);
     }
   },
   methods: {
     getList(page, period) {
       this.$store.dispatch('news/updatePage', +page);
-      this.$store.dispatch('news/updatePeriod', period);
       this.$store.dispatch('news/getNews', { page, period });
     },
     actNext() {
       this.$store.dispatch('news/updatePage', this.page + 1);
       this.$store.dispatch('news/getNews', {
         page: this.page,
-        period: this.period,
       });
-      this.$router.push(`?page=${this.page}&period=${this.period}`);
+      this.$router.push(`?page=${this.page}`);
     },
     actPreview() {
       this.$store.dispatch('news/updatePage', this.page - 1);
       this.$store.dispatch('news/getNews', {
         page: this.page,
-        period: this.period,
       });
-      this.$router.push(`?page=${this.page}&period=${this.period}`);
+      this.$router.push(`?page=${this.page}`);
     },
   },
 }
