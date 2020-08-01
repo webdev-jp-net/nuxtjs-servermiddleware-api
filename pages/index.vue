@@ -15,6 +15,15 @@
         <nuxt-link to="/news">News articles of dummy</nuxt-link>
       </li>
     </ul>
+    <footer>
+      <small>
+        GitHub:<a
+          href="https://github.com/webdev-jp-net/nuxtjs-servermiddleware-api"
+        >
+          nuxtjs-servermiddleware-api
+        </a>
+      </small>
+    </footer>
   </article>
 </template>
 
@@ -28,7 +37,7 @@ export default {};
   max-width: calc(100% - 4rem);
   margin: 2rem auto;
 
-  header {
+  > header {
     h1 {
       margin: 4rem 0 0;
       font-size: 3rem;
@@ -95,6 +104,13 @@ export default {};
           transform: scaleX(-1);
         }
       }
+    }
+  }
+
+  > footer {
+    margin: 4rem 0 0;
+    a {
+      color: currentColor;
     }
   }
 }

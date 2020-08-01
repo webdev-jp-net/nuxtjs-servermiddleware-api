@@ -1,7 +1,13 @@
 {
-  "name": "test-app",
+  "name": "nuxtjs-servermiddleware-api",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nt-tamsan/yakult-app-YL.git"
+  },
+  "author": "webdev",
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
