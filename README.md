@@ -2,6 +2,8 @@
 
 1.0.0
 
+[DEMO](https://nuxtjs-servermiddleware-api.vercel.app/)
+
 - News articles of dummy
 
 ## added/changed
@@ -11,6 +13,7 @@
 - `/pages/news/_id.js`
 - `/store/news.js`
 - `nuxt.config.js`
+- `.env`
 
 ## Build Setup
 
