@@ -12,7 +12,9 @@
     <h2>sample</h2>
     <ul>
       <li>
-        <nuxt-link to="/news">News articles of dummy</nuxt-link>
+        <nuxt-link to="/news">
+          News articles of dummy
+        </nuxt-link>
       </li>
     </ul>
     <footer>

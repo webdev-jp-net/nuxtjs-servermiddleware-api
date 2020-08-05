@@ -43,11 +43,11 @@ const generateDummy = total => {
   for (let i = 1; i <= total; i += 1) {
     // get sample
     const pointer = (() => {
-      let result;
+      let count;
       do {
-        result = Math.floor(Math.random() * (sample.length - 1));
-      } while (result === history);
-      return +result;
+        count = Math.floor(Math.random() * (sample.length - 1));
+      } while (count === history);
+      return +count;
     })();
     history = pointer;
     result.push({
@@ -72,7 +72,7 @@ const generateDummy = total => {
 // generate
 const db = generateDummy(36);
 
-export default function (req, res, next) {
+export default function (req, res) {
   // req は Node.js の HTTPリクエストオブジェクトです
   const parsedUrl = parse(req.url, true);
   const params = parsedUrl.query;

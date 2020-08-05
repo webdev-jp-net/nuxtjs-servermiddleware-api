@@ -1,6 +1,6 @@
 // NEWS
 import { format } from 'date-fns';
-import { cloneDeep, map, result } from 'lodash';
+import { cloneDeep, map } from 'lodash';
 // STATE
 const state = () => {
   return {

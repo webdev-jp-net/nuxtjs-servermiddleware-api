@@ -26,8 +26,8 @@ export default {
   },
   created() {
     if (!this.article) {
+      this.getArticle(this.$route.params.id);
     }
-    this.getArticle(this.$route.params.id);
   },
   methods: {
     getArticle(id) {

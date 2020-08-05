@@ -6,28 +6,33 @@
     <ul :class="$style.body">
       <li v-for="article in resultList" :key="article.id">
         <nuxt-link :to="`/news/${article.id}`">
-          <p>
-            {{article.title}}
-          </p>
-          <span>{{article.date}}</span>
+          <p>{{ article.title }}</p>
+          <span>{{ article.date }}</span>
         </nuxt-link>
       </li>
     </ul>
     <footer>
-      <button type="button" :disabled="!linearNavi.preview" @click="actPreview" ></button>
-      <span>{{pageStatus}}</span>
-      <button type="button" :disabled="!linearNavi.next" @click="actNext" ></button>
+      <button
+        type="button"
+        :disabled="!linearNavi.preview"
+        @click="actPreview"
+      ></button>
+      <span>{{ pageStatus }}</span>
+      <button
+        type="button"
+        :disabled="!linearNavi.next"
+        @click="actNext"
+      ></button>
     </footer>
   </article>
 </template>
 <script>
-import { format } from 'date-fns';
 export default {
   name: 'NewsList',
   beforeRouteUpdate(to, from, next) {
     const page = to.query.page || 1;
     this.getList(page);
-    window.scroll(0,0);
+    window.scroll(0, 0);
     next();
   },
   computed: {
@@ -45,7 +50,7 @@ export default {
     },
   },
   created() {
-    if(!this.resultList.length) {
+    if (!this.resultList.length) {
       const page = this.$route.query.page || 1;
       this.getList(page);
     }
@@ -70,11 +75,7 @@ export default {
       this.$router.push(`?page=${this.page}`);
     },
   },
-}
-</script>
-export default {
-
-}
+};
 </script>
 <style lang="scss" module>
 .article-list {
@@ -86,7 +87,7 @@ export default {
     margin: 2rem 0 0;
 
     h2 {
-      margin:  0 1rem;
+      margin: 0 1rem;
       font-size: 2rem;
     }
   }
@@ -113,13 +114,12 @@ export default {
       &:focus,
       &:hover {
         background-color: whitesmoke;
-        transition: background-color .5s, opacity .5s;
+        transition: background-color 0.5s, opacity 0.5s;
       }
 
       &:hover {
         cursor: pointer;
       }
-
 
       &:disabled {
         opacity: 0;
@@ -133,7 +133,8 @@ export default {
         height: 1rem;
         color: currentColor;
         content: '';
-        background: url('data:image/svg+xml;charset=UTF-8,#{$code}') no-repeat right 60% center;
+        background: url('data:image/svg+xml;charset=UTF-8,#{$code}') no-repeat
+          right 60% center;
       }
 
       &::after {
@@ -141,7 +142,7 @@ export default {
       }
 
       &:first-child::after,
-      &:last-child::before, {
+      &:last-child::before {
         content: none;
       }
     }
@@ -161,8 +162,8 @@ export default {
     a {
       display: flex;
       flex-direction: column;
-      padding: .9rem 1rem;
-      margin: .1rem 0;
+      padding: 0.9rem 1rem;
+      margin: 0.1rem 0;
       color: black;
       text-decoration: none;
 
@@ -170,7 +171,7 @@ export default {
 
       &:hover {
         background-color: whitesmoke;
-        transition: background-color .5s;
+        transition: background-color 0.5s;
       }
 
       p {
