@@ -100,7 +100,14 @@ export default function (req, res) {
           if (isValid) return item;
         });
 
-      return records.slice(start, start + max);
+      return {
+        response: {
+          page: params.page,
+          total: records.length,
+          records: records.slice(start, start + max),
+          period: params.period || '',
+        },
+      };
     } else return { message: 'error' };
   };
 
@@ -110,16 +117,7 @@ export default function (req, res) {
         'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
       })
-      .end(
-        JSON.stringify({
-          response: {
-            page: params.page,
-            total: records.length,
-            records: makeResponse(),
-            period: params.period || '',
-          },
-        })
-      );
+      .end(JSON.stringify(makeResponse()));
   } catch (err) {
     return res.status(400).json({
       error: {
