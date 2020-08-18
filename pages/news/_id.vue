@@ -7,9 +7,7 @@
     <figure :class="$style.figure">
       <img :src="article.img" :alt="`[photo]${article.title}`" />
     </figure>
-    <p>
-      {{ article.body }}
-    </p>
+    <p>{{ article.body }}</p>
 
     <footer>
       <p>{{ article.date }}</p>
@@ -19,15 +17,17 @@
 <script>
 export default {
   name: 'NewsArticle',
+  async asyncData({ store, route }) {
+    const current = await store.getters['news/article'];
+    if (!current.date)
+      await store.dispatch('news/getNews', {
+        condition: { id: route.params.id },
+      });
+  },
   computed: {
     article() {
       return this.$store.getters['news/article'];
     },
-  },
-  created() {
-    if (!this.article) {
-      this.getArticle(this.$route.params.id);
-    }
   },
   methods: {
     getArticle(id) {
