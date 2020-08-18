@@ -5,7 +5,7 @@
       <p>{{ article.author }}</p>
     </header>
     <figure :class="$style.figure">
-      <img :src="article.img" :alt="`[photo]${article.title}`" />
+      <img :src="article.img" :alt="`[photo]${article.title}`" loading />
     </figure>
     <p>{{ article.body }}</p>
 
