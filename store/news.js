@@ -50,6 +50,10 @@ const mutations = {
   setPage(state, payload) {
     state.page = +payload;
   },
+  // cash
+  setCash(state, payload) {
+    state.article = payload;
+  },
 };
 
 // ACTIONS
@@ -89,6 +93,10 @@ const actions = {
   // current page
   updatePage({ commit }, payload) {
     commit('setPage', payload);
+  },
+  // cash
+  updateCash({ commit }, payload) {
+    commit('setCash', payload);
   },
 };
 

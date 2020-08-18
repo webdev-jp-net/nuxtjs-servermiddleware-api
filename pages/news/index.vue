@@ -35,6 +35,17 @@ export default {
     window.scroll(0, 0);
     next();
   },
+  beforeRouteLeave(to, from, next) {
+    if (from.name === 'news' && to.name === 'news-id') {
+      const cash = find(this.resultList, { date: to.params.id });
+      if (cash) this.$store.dispatch('news/updateCash', cash);
+      else
+        this.$store.dispatch('news/getNews', {
+          condition: { id: to.params.id },
+        });
+    }
+    next();
+  },
   computed: {
     resultList() {
       return this.$store.getters['news/list'];
