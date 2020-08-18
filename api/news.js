@@ -45,7 +45,7 @@ const generateDummy = total => {
     const pointer = (() => {
       let count;
       do {
-        count = Math.floor(Math.random() * (sample.length - 1));
+        count = Math.floor(Math.random() * sample.length);
       } while (count === history);
       return +count;
     })();
