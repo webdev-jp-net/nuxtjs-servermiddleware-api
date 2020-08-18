@@ -1,6 +1,6 @@
 # Nuxt JS serverMiddleware mockup API
 
-1.0.0
+1.0.1
 
 [DEMO](https://nuxtjs-servermiddleware-api.vercel.app/)
 

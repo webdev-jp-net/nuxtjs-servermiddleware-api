@@ -1,6 +1,6 @@
 {
   "name": "nuxtjs-servermiddleware-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "repository": {
     "type": "git",
@@ -71,8 +71,7 @@
     },
     "extends": [
       "eslint:recommended",
-      "plugin:vue/recommended",
-      "plugin:prettier/recommended"
+      "plugin:vue/recommended"
     ],
     "plugins": [
       "import"
